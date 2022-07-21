@@ -99,6 +99,8 @@
     <None Include="packages.config" />
     <None Include="Releases\MyApp-0.6.6-delta.nupkg" />
     <None Include="Releases\MyApp-0.6.6-full.nupkg" />
+    <None Include="Releases\MyApp-0.6.7-delta.nupkg" />
+    <None Include="Releases\MyApp-0.6.7-full.nupkg" />
     <None Include="Releases\RELEASES" />
     <None Include="Releases\Setup.msi" />
   </ItemGroup>
