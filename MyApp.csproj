@@ -97,17 +97,6 @@
     <None Include="App.config" />
     <None Include="MyApp.nuspec" />
     <None Include="packages.config" />
-    <None Include="Releases\MyApp-0.6.0-full.nupkg" />
-    <None Include="Releases\MyApp-0.6.1-delta.nupkg" />
-    <None Include="Releases\MyApp-0.6.1-full.nupkg" />
-    <None Include="Releases\MyApp-0.6.2-delta.nupkg" />
-    <None Include="Releases\MyApp-0.6.2-full.nupkg" />
-    <None Include="Releases\MyApp-0.6.3-delta.nupkg" />
-    <None Include="Releases\MyApp-0.6.3-full.nupkg" />
-    <None Include="Releases\MyApp-0.6.4-delta.nupkg" />
-    <None Include="Releases\MyApp-0.6.4-full.nupkg" />
-    <None Include="Releases\MyApp-0.6.5-delta.nupkg" />
-    <None Include="Releases\MyApp-0.6.5-full.nupkg" />
     <None Include="Releases\MyApp-0.6.6-delta.nupkg" />
     <None Include="Releases\MyApp-0.6.6-full.nupkg" />
     <None Include="Releases\RELEASES" />
