@@ -39,17 +39,17 @@ namespace MyApp
         {
             try
             {
-                using (var mgr = new UpdateManager("https://github.com/Shawminator/MyApp/releases/tag/MyAppTestUpdate"))
+                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Shawminator/MyApp/releases/tag/MyAppTestUpdate"))
                 {
                     Console.WriteLine("Checking for updates.");
-                    if (mgr.IsInstalledApp)
+                    if (mgr.Result.IsInstalledApp)
                     {
-                        Console.WriteLine($"Current Version: v{mgr.CurrentlyInstalledVersion()}");
-                        var updates = await mgr.CheckForUpdate();
+                        Console.WriteLine($"Current Version: v{mgr.Result.CurrentlyInstalledVersion()}");
+                        var updates = await mgr.Result.CheckForUpdate();
                         if (updates.ReleasesToApply.Any())
                         {
                             Console.WriteLine("Updates found. Applying updates.");
-                            var release = await mgr.UpdateApp();
+                            var release = await mgr.Result.UpdateApp();
 
                             MessageBox.Show("MyApp Updated, Its will now restart.");
 
