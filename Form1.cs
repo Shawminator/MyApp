@@ -59,7 +59,7 @@ namespace MyApp
                     }
                 }
             }
-            catch (Exception e)
+            catch
             {   //log exception and move on
             }
         }
