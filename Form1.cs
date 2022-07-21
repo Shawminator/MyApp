@@ -41,14 +41,11 @@ namespace MyApp
             {
                 using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Shawminator/MyApp"))
                 {
-                    MessageBox.Show("Checking for updates.");
                     var updates = await mgr.Result.CheckForUpdate();
                     if (updates.ReleasesToApply.Any())
                     {
-                        MessageBox.Show("Updates found. Applying updates.");
+                        MessageBox.Show("Updates found. Applying updates And restarting app");
                         var release = await mgr.Result.UpdateApp();
-
-                        MessageBox.Show("Updates applied. Restarting app.");
                         UpdateManager.RestartApp();
                     }
                 }
