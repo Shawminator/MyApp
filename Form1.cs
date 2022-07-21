@@ -39,28 +39,23 @@ namespace MyApp
         {
             try
             {
-                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Shawminator/MyApp/releases/tag/MyAppTestUpdate"))
+                using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/Shawminator/MyApp"))
                 {
-                    Console.WriteLine("Checking for updates.");
-                    if (mgr.Result.IsInstalledApp)
+                    MessageBox.Show("Checking for updates.");
+                    var updates = await mgr.Result.CheckForUpdate();
+                    if (updates.ReleasesToApply.Any())
                     {
-                        Console.WriteLine($"Current Version: v{mgr.Result.CurrentlyInstalledVersion()}");
-                        var updates = await mgr.Result.CheckForUpdate();
-                        if (updates.ReleasesToApply.Any())
-                        {
-                            Console.WriteLine("Updates found. Applying updates.");
-                            var release = await mgr.Result.UpdateApp();
+                        MessageBox.Show("Updates found. Applying updates.");
+                        var release = await mgr.Result.UpdateApp();
 
-                            MessageBox.Show("MyApp Updated, Its will now restart.");
-
-                            Console.WriteLine("Updates applied. Restarting app.");
-                            UpdateManager.RestartApp();
-                        }
+                        MessageBox.Show("Updates applied. Restarting app.");
+                        UpdateManager.RestartApp();
                     }
                 }
             }
             catch
-            {   //log exception and move on
+            {
+                MessageBox.Show("Sonething is wrong");
             }
         }
     }
