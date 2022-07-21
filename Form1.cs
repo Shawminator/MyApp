@@ -39,7 +39,7 @@ namespace MyApp
         {
             try
             {
-                using (var mgr = new UpdateManager("https://github.com/Shawminator/MyApp/releases/download/MyAppTestUpdate"))
+                using (var mgr = new UpdateManager("https://github.com/Shawminator/MyApp/tree/master/Releases"))
                 {
                     Console.WriteLine("Checking for updates.");
                     if (mgr.IsInstalledApp)
